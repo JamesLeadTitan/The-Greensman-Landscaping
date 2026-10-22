@@ -65,7 +65,10 @@ header.site{position:sticky;top:0;z-index:50;background:var(--hero-panel)}
 .ghl-form-wrap iframe{display:block;width:100%;min-height:586px;height:586px}
 
 @media(max-width:900px){.hero-wrap{min-height:0}.hero{min-height:0}.hero-grid{grid-template-columns:1fr;gap:0}
- .hero{display:block;background-color:#1a1a1a;background-repeat:no-repeat;background-position:27% 0;background-size:auto 760px;background-size:auto max(100vh,150vw,100%);background-size:auto max(100svh,150vw,100%)}
+ .hero{display:block;background-color:var(--white);background-repeat:no-repeat;background-position:27% 0;background-size:0 0}
+  .hero::before{content:"";position:absolute;top:0;left:0;right:0;z-index:0;height:350px;
+    height:calc(clamp(240px,38vh,340px) + 110px);height:calc(clamp(240px,38svh,340px) + 110px);
+    background-color:#1a1a1a;background-image:inherit;background-position:inherit;background-size:cover;background-repeat:no-repeat}
  .hero-grid{display:block;padding:240px 0 16px;padding-top:clamp(240px,38vh,340px);padding-top:clamp(240px,38svh,340px)}
  .hero-grid>div:first-child{display:none}}
 /* about */
@@ -232,7 +235,7 @@ footer.foot{background:var(--hero-panel);color:var(--white);padding:64px 0 28px}
 <div class="foot-grid">
 <div><div class="brand-name">The Greensman</div><p>Landscaping and garden care from Elstead, near Godalming.</p>
 <a class="phone" href="tel:+441252412466"><span class="pglyph">&#128222;</span>01252 412466</a></div>
-<div><h4>Services</h4><ul><li><a href="patios-and-paving.html">Patios and Paving</a></li><li><a href="fencing.html">Fencing</a></li><li><a href="decking.html">Decking</a></li><li><a href="garden-renovation-and-clearance.html">Garden Renovation and Clearance</a></li><li><a href="turfing-and-artificial-grass.html">Turfing and Artificial Grass</a></li><li><a href="garden-maintenance.html">Garden Maintenance</a></li><li><a href="pressure-washing.html">Pressure Washing</a></li></ul></div>
+<div><h4>Services</h4><ul><li><a href="garden-design-and-build.html">Garden Design and Build</a></li><li><a href="patios-and-paving.html">Patios and Paving</a></li><li><a href="fencing.html">Fencing</a></li><li><a href="decking.html">Decking</a></li><li><a href="garden-renovation-and-clearance.html">Garden Renovation and Clearance</a></li><li><a href="turfing-and-artificial-grass.html">Turfing and Artificial Grass</a></li><li><a href="garden-maintenance.html">Garden Maintenance</a></li><li><a href="pressure-washing.html">Pressure Washing</a></li></ul></div>
 <div><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="service-areas.html">Service Areas</a></li><li><a href="index.html#reviews">Reviews</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="index.html#quote">Contact</a></li></ul></div>
 <div><h4>Contact</h4><ul><li><a href="tel:+441252412466">01252 412466</a></li><li><a href="mailto:freddy.trounce@icloud.com">freddy.trounce@icloud.com</a></li>
 <li>2 Burford Lodge, Elstead, Godalming GU8 6HU</li><li><a href="service-areas.html">Areas I cover</a></li></ul></div>
