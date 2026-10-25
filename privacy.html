@@ -198,6 +198,15 @@ footer.foot{background:var(--hero-panel);color:var(--white);padding:64px 0 28px}
  body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
 }
 
+/* cookie banner (Meta pixel loads only on Accept) */
+.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:720px;margin:0 auto;background:var(--hero-panel);color:var(--white);border-radius:8px;padding:16px 20px;display:flex;align-items:center;gap:16px;box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.ck[hidden]{display:none}
+.ck p{margin:0;font-size:16px;line-height:1.5;color:var(--white)}
+.ck a{color:var(--white);text-decoration:underline}
+.ck-btns{display:flex;gap:10px;flex-shrink:0}
+.ck-no{background:transparent;color:var(--white);border:2px solid var(--white)}
+@media(max-width:900px){.ck{bottom:calc(164px + env(safe-area-inset-bottom));flex-direction:column;align-items:stretch;gap:12px}.ck-btns .btn{flex:1;justify-content:center}}
+
 </style>
 </head>
 <body>
@@ -221,8 +230,8 @@ footer.foot{background:var(--hero-panel);color:var(--white);padding:64px 0 28px}
 <p>Our lawful basis for this is legitimate interests. If you contact a local trade business about a job, it is reasonable to expect that business to keep a record of your enquiry so it can get back to you. Where we are carrying out paid work for you, we also rely on performance of a contract.</p>
 <div class="callout">We do not use your details for marketing without asking you first. Contacting us about a job is not consent to receive offers, and we do not sell or share your details with anyone for their own marketing.</div>
 <h2>How Long We Keep It</h2><p>Enquiry and customer records are kept for three years from our last contact with you, then deleted. Records we are legally required to hold for longer, such as invoices and accounting records, are kept for the period the law requires.</p>
-<h2>Who Else Handles Your Details</h2><p>We use a small number of suppliers to run this website, our phone and messaging system, and our customer records. They act only on our instructions and cannot use your details for their own purposes. We do not sell or share your details with anyone for their own marketing. If you would like to know who these suppliers are, email us and we will tell you.</p>
-<h2>Cookies And This Website</h2><p>This site does not run advertising or tracking cookies. The chat box and the embedded Google map may set cookies needed for those features to work. You can block or delete cookies in your browser settings, though the chat box may stop working if you do.</p>
+<h2>Who Else Handles Your Details</h2><p>We use a small number of suppliers to run this website, our phone and messaging system, and our customer records. They act only on our instructions and cannot use your details for their own purposes. We do not sell or share your details with anyone for their own marketing. If you accept cookies, Meta Platforms also receives details of your visit, as explained below. If you would like to know who these suppliers are, email us and we will tell you.</p>
+<h2>Cookies And This Website</h2><p>If you click Accept on the cookie banner, this site loads the Meta (Facebook) pixel. It sets cookies that tell us which of our Facebook adverts brought you here and lets us show our adverts to people who have visited. Meta receives details of the pages you view and your browser. If you click No thanks, the pixel does not load. To change your choice later, clear this site's data in your browser and the banner will show again. The chat box and the embedded Google map may also set cookies needed for those features to work. You can block or delete cookies in your browser settings, though the chat box may stop working if you do.</p>
 <h2>Your Rights</h2><p>Under UK data protection law you can ask us to:</p>
 <ul><li>Give you a copy of the information we hold about you.</li><li>Correct anything that is wrong.</li><li>Delete your details, where we are not required to keep them.</li><li>Stop using your details, or object to how we are using them.</li></ul>
 <p>Email us and we will deal with it within one month. There is no charge.</p>
@@ -247,6 +256,12 @@ footer.foot{background:var(--hero-panel);color:var(--white);padding:64px 0 28px}
 function toggleNav(){document.getElementById('nav').classList.toggle('open')}
 document.addEventListener('click',function(e){var t=e.target;if(t&&t.closest&&t.closest('#nav a')){document.getElementById('nav').classList.remove('open')}});
 function toggleFaq(b){var it=b.parentElement,open=it.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(x){x.classList.remove('open');x.querySelector('.faq-icon').textContent='+'});if(!open){it.classList.add('open');b.querySelector('.faq-icon').textContent='\u2212'}}
+</script>
+<div class="ck" id="ck" hidden role="region" aria-label="Cookies"><p>We use a Facebook cookie to see which of our adverts bring people here. Is that OK? <a href="privacy.html">More info</a></p><div class="ck-btns"><button type="button" class="btn btn-accent" onclick="ckSet(1)">Accept</button><button type="button" class="btn ck-no" onclick="ckSet(0)">No thanks</button></div></div>
+<script>
+function ckPixel(){if(window.fbq)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','3108998049303746');fbq('track','PageView')}
+function ckSet(v){try{localStorage.setItem('gm-ck',v?'yes':'no')}catch(e){}document.getElementById('ck').hidden=true;if(v)ckPixel()}
+(function(){var c=null;try{c=localStorage.getItem('gm-ck')}catch(e){}if(c==='yes')ckPixel();else if(c!=='no')document.getElementById('ck').hidden=false})();
 </script>
 <div class="callbar"><a class="cb-call" href="tel:+441252412466"><span class="pglyph">&#128222;</span>01252 412466</a><a class="cb-quote" href="index.html#quote">Free Quote</a></div>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ad53224a6210f61a046b5d9"></script>

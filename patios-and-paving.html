@@ -198,6 +198,15 @@ footer.foot{background:var(--hero-panel);color:var(--white);padding:64px 0 28px}
  body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
 }
 
+/* cookie banner (Meta pixel loads only on Accept) */
+.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:720px;margin:0 auto;background:var(--hero-panel);color:var(--white);border-radius:8px;padding:16px 20px;display:flex;align-items:center;gap:16px;box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.ck[hidden]{display:none}
+.ck p{margin:0;font-size:16px;line-height:1.5;color:var(--white)}
+.ck a{color:var(--white);text-decoration:underline}
+.ck-btns{display:flex;gap:10px;flex-shrink:0}
+.ck-no{background:transparent;color:var(--white);border:2px solid var(--white)}
+@media(max-width:900px){.ck{bottom:calc(164px + env(safe-area-inset-bottom));flex-direction:column;align-items:stretch;gap:12px}.ck-btns .btn{flex:1;justify-content:center}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "serviceType": "Patios and Paving", "provider": {"@type": "HomeAndConstructionBusiness", "name": "The Greensman Landscaping Surrey", "telephone": "+441252412466", "url": "https://www.thegreensmanelstead.com/"}, "areaServed": [{"@type": "City", "name": "Godalming"}, {"@type": "City", "name": "Elstead"}, {"@type": "City", "name": "Guildford"}, {"@type": "City", "name": "Woking"}, {"@type": "City", "name": "Camberley"}, {"@type": "City", "name": "Farnham"}, {"@type": "City", "name": "Esher"}, {"@type": "City", "name": "Haslemere"}, {"@type": "City", "name": "Cranleigh"}, {"@type": "City", "name": "Aldershot"}, {"@type": "City", "name": "Cobham"}, {"@type": "City", "name": "Weybridge"}, {"@type": "City", "name": "Walton-on-Thames"}, {"@type": "City", "name": "Epsom"}, {"@type": "City", "name": "Reigate"}, {"@type": "City", "name": "Dorking"}, {"@type": "City", "name": "Leatherhead"}, {"@type": "City", "name": "Virginia Water"}], "url": "https://www.thegreensmanelstead.com/patios-and-paving"}</script>
 <style>/* phone hero (build doc section 3, Mobile hero) */
@@ -260,6 +269,12 @@ footer.foot{background:var(--hero-panel);color:var(--white);padding:64px 0 28px}
 function toggleNav(){document.getElementById('nav').classList.toggle('open')}
 document.addEventListener('click',function(e){var t=e.target;if(t&&t.closest&&t.closest('#nav a')){document.getElementById('nav').classList.remove('open')}});
 function toggleFaq(b){var it=b.parentElement,open=it.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(x){x.classList.remove('open');x.querySelector('.faq-icon').textContent='+'});if(!open){it.classList.add('open');b.querySelector('.faq-icon').textContent='\u2212'}}
+</script>
+<div class="ck" id="ck" hidden role="region" aria-label="Cookies"><p>We use a Facebook cookie to see which of our adverts bring people here. Is that OK? <a href="privacy.html">More info</a></p><div class="ck-btns"><button type="button" class="btn btn-accent" onclick="ckSet(1)">Accept</button><button type="button" class="btn ck-no" onclick="ckSet(0)">No thanks</button></div></div>
+<script>
+function ckPixel(){if(window.fbq)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','3108998049303746');fbq('track','PageView')}
+function ckSet(v){try{localStorage.setItem('gm-ck',v?'yes':'no')}catch(e){}document.getElementById('ck').hidden=true;if(v)ckPixel()}
+(function(){var c=null;try{c=localStorage.getItem('gm-ck')}catch(e){}if(c==='yes')ckPixel();else if(c!=='no')document.getElementById('ck').hidden=false})();
 </script>
 <div class="callbar"><a class="cb-call" href="tel:+441252412466"><span class="pglyph">&#128222;</span>01252 412466</a><a class="cb-quote" href="#quote">Free Quote</a></div>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ad53224a6210f61a046b5d9"></script>
