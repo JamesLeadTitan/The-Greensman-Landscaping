@@ -275,7 +275,8 @@ function ckSet(v){try{localStorage.setItem('gm-ck',v?'yes':'no')}catch(e){}docum
  window.addEventListener('focus',show)})();
 (function(){var n=0,t=setInterval(function(){var w=document.querySelector('chat-widget'),r=w&&w.shadowRoot;
  if(r&&r.querySelector('.lc_text-widget')){var s=document.createElement('style');
-  s.textContent='@media(max-width:900px){.lc_text-widget--prompt{display:none!important}.lc_text-widget,.lc_text-widget--bubble{bottom:calc(84px + env(safe-area-inset-bottom))!important}}';r.appendChild(s);clearInterval(t)}
+  s.textContent='@media(max-width:900px){.lc_text-widget--prompt{display:none!important}.lc_text-widget,.lc_text-widget--bubble{bottom:calc(84px + env(safe-area-inset-bottom))!important}}:host(.lt-qvis) .lc_text-widget--prompt,:host(.lt-qvis) .lc_text-widget--bubble{display:none!important}';r.appendChild(s);clearInterval(t);
+  var f=document.getElementById('quote');if(f&&'IntersectionObserver' in window){new IntersectionObserver(function(en){w.classList.toggle('lt-qvis',en[0].isIntersecting)}).observe(f)}}
  else if(++n>40)clearInterval(t)},250)})();
 </script>
 </body>
